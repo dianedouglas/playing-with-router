@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Album } from './album.model';
 
 @Component({
   selector: 'my-app',
@@ -23,8 +24,4 @@ export class AppComponent {
     new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015),
     new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967)
   ]
-}
-
-export class Album {
-  constructor (public title: string, public artist: string, public released: number) {  }
 }
