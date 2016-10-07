@@ -12,6 +12,12 @@ import { AlbumService } from './album.service';
       <h3>{{albumToDisplay.title}}</h3>
       <p>By: {{albumToDisplay.artist}}</p>
       <p>Released: {{albumToDisplay.released}}</p>
+      <label>Edit Album Title:</label>
+      <input [(ngModel)]="albumToDisplay.title">
+      <label>Edit Album Artist:</label>
+      <input [(ngModel)]="albumToDisplay.artist">
+      <label>Edit Album Release Date:</label>
+      <input [(ngModel)]="albumToDisplay.released">
     </div>
   `
 })
