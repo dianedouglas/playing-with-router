@@ -5,6 +5,7 @@ import { WelcomeComponent }   from './welcome.component';
 import { AboutComponent }   from './about.component';
 import { LocationsComponent }   from './locations.component';
 import { AlbumListComponent }   from './album-list.component';
+import { AlbumDetailsComponent }   from './album-details.component';
 import { routing } from './app.routing';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { routing } from './app.routing';
     WelcomeComponent,
     AboutComponent,
     LocationsComponent,
-    AlbumListComponent
+    AlbumListComponent,
+    AlbumDetailsComponent
   ],
   bootstrap: [ AppComponent ]
 })
