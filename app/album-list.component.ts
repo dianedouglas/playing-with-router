@@ -4,7 +4,7 @@ import { Album } from './album.model';
 @Component({
   selector: 'albums',
   template: `
-    <div class="album" *ngFor="let album of albums">
+    <div class="album" *ngFor="let album of albums" (click)="gotoDetail(album)">
       <p>{{album.title}}</p>
       <p>By {{album.artist}}</p>
       <p>Released in {{album.released}}</p>
@@ -20,6 +20,9 @@ export class AlbumListComponent {
     new Album("Dilate", "Ani DiFranco", 1996),
     new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015),
     new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967)
-  ]
+  ];
+  gotoDetail(clickedAlbum: Album): void {
+    alert(clickedAlbum.title);
+  }
 }
 
