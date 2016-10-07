@@ -20,7 +20,10 @@ export class AlbumListComponent {
   albums: Album[];
   
   getTheAlbumsFromTheService(): void {
-    this.albums = this.albumService.getAlbums();
+    // this.albums = this.albumService.getAlbums();
+    // Hey album service, get the albums. 
+    // When the promise is resolved, take the array of albums it returns and put it in the albums property in this component for display.
+    this.albumService.getAlbums().then(albumsReturnedFromPromise => this.albums = albumsReturnedFromPromise);
   }
   ngOnInit() {
     this.getTheAlbumsFromTheService();

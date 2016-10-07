@@ -7,7 +7,7 @@ import { ALBUMS } from './mock-albums';
 
 @Injectable()
 export class AlbumService {
-  getAlbums() {
-    return ALBUMS;
+  getAlbums(): Promise<Album[]> {
+    return Promise.resolve(ALBUMS);
   }
 }
