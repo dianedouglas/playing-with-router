@@ -10,4 +10,12 @@ export class AlbumService {
   getAlbums(): Promise<Album[]> {
     return Promise.resolve(ALBUMS);
   }
+  getAlbumById(albumId: number): Promise<Album> {
+    // we need to return a promise which returns an album matching the passed in id when it resolves
+    // call getAlbums
+    // take the albums returned from the promise and instead of putting them in an albums property, call the JS find method 
+    // this will return any albums where their id matches the one passed in. 
+    return this.getAlbums()
+      .then(albumsReturnedFromPromise => albumsReturnedFromPromise.find(album => album.id === albumId));
+  }
 }
