@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
-  moduleId: module.id,
-  selector: 'my-dashboard',
+  selector: 'welcome',
   template: `
-    <p>sup</p>
+    <h2>Welcome!</h2>
+    <img class="big-home" src="resources/images/concert.jpg"/>
   `
 })
 export class WelcomeComponent {
-
-  constructor(private router: Router) {}
 
 }

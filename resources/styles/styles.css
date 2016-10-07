@@ -1,6 +1,6 @@
 h1 {
   text-align: center;
-  color: blue;
+  color: violet;
 }
 
 h2 {
@@ -13,4 +13,8 @@ h2 {
   padding: 10px;
   width: 25%;
   background-color: LightBlue;
+}
+
+img.big-home {
+  width: 100%;
 }
