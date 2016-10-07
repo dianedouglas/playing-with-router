@@ -7,7 +7,7 @@ import { ALBUMS } from './mock-albums';
 
 @Injectable()
 export class AlbumService {
-  getAlbums = function() {
+  getAlbums() {
     return ALBUMS;
   }
 }
