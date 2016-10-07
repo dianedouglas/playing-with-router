@@ -1,13 +1,13 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent }   from './dashboard.component';
+import { WelcomeComponent }   from './welcome.component';
 
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: DashboardComponent
+    component: WelcomeComponent
   },
 ];
 
