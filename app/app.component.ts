@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
           <a class="navbar-brand" routerLink="/">Cameron</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="/albums">Albums</a></li>
           <li><a routerLink="/about">About</a></li>
           <li><a routerLink="/locations">Locations</a></li>
-          <li><a routerLink="/">Home</a></li>
         </ul>
       </div><!-- /.container-fluid -->
     </nav>
