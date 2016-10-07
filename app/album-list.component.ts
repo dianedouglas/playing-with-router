@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Album } from './album.model';
+import { AlbumService } from './album.service';
 
 @Component({
   selector: 'albums',
+  providers: [AlbumService],
   template: `
     <div class="album" *ngFor="let album of albums" (click)="gotoDetail(album)">
       <p>{{album.title}}</p>
@@ -13,18 +15,17 @@ import { Album } from './album.model';
 })
 
 export class AlbumListComponent {
-  constructor(private router: Router) { }
-
-  albums: Album[] = [
-    new Album("Pulse", "Pink Floyd", 1995, 1),
-    new Album("Funhouse", "The Stooges", 1970, 2),
-    new Album("Twilight of the Thunder God", "Amon Amarth", 2008, 3),
-    new Album("Dilate", "Ani DiFranco", 1996, 4),
-    new Album("Chopin - Complete Nocturnes", "Brigitte Engerer", 2015, 5),
-    new Album("Axis Bold As Love", "The Jimi Hendrix Experience", 1967, 6)
-  ];
+  constructor(private router: Router, private albumService: AlbumService) { }
+  
+  albums: Album[];
+  
+  getTheAlbumsFromTheService(): void {
+    this.albums = this.albumService.getAlbums();
+  }
+  ngOnInit() {
+    this.getTheAlbumsFromTheService();
+  }
   gotoDetail(clickedAlbum: Album): void {
-    // alert(clickedAlbum.title);
     this.router.navigate(['/album-details', clickedAlbum.id]);
   }
 }
