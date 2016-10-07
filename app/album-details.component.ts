@@ -12,18 +12,27 @@ import { AlbumService } from './album.service';
       <h3>{{albumToDisplay.title}}</h3>
       <p>By: {{albumToDisplay.artist}}</p>
       <p>Released: {{albumToDisplay.released}}</p>
-      <label>Edit Album Title:</label>
-      <input [(ngModel)]="albumToDisplay.title">
-      <label>Edit Album Artist:</label>
-      <input [(ngModel)]="albumToDisplay.artist">
-      <label>Edit Album Release Date:</label>
-      <input [(ngModel)]="albumToDisplay.released">
+
+      <div *ngIf="editing === false">
+        <button (click)="showEditForm()">Edit</button>
+      </div>
+
+      <div *ngIf="editing === true">
+        <label>Edit Album Title:</label>
+        <input [(ngModel)]="albumToDisplay.title">
+        <label>Edit Album Artist:</label>
+        <input [(ngModel)]="albumToDisplay.artist">
+        <label>Edit Album Release Date:</label>
+        <input [(ngModel)]="albumToDisplay.released">
+        <button (click)="hideEditForm()">Done</button>
+      </div>
     </div>
   `
 })
 export class AlbumDetailsComponent implements OnInit{
   public id: number;
   public albumToDisplay: Album;
+  public editing: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -38,6 +47,13 @@ export class AlbumDetailsComponent implements OnInit{
   }
   goBack(): void {
     this.location.back();
+  }
+  showEditForm() {
+    this.editing = true;
+  }
+  hideEditForm() {
+    this.editing = false;
+
   }
 
 }
